@@ -1,0 +1,87 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lucky Sevens</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/JavaScript" src="luckySevens.js"></script>
+    <style>
+        body{
+            font-family:  cursive;
+        }
+        button[type=submit], .input-group-addon{
+            border: 2px solid #12130f;
+        }
+        button[type=submit] {
+            font-weight: bold;
+        }
+        input[type=number]{
+            border-top: 2px solid #12130f;
+            border-bottom: 2px ridge #12130f;
+        }
+        .table{
+            margin: 0 auto;
+            width: auto;
+        }
+        table.table-bordered, table.table-bordered > tbody > tr > td{
+            border-color: #12130f;
+        }
+		tr:nth-child(even){
+			background-color: #d3d4d3;
+        }
+        tr#rowOne{
+            background-color: #bebebd
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Lucky Sevens</h1>
+        <form name="betForm" onsubmit="return validateBet();" class="form-horizontal">
+            <div class="form-group">
+                <label for="bet" class="control-label col-lg-6 col-sm-6">Starting Bet:</label>
+                <div class="col-lg-2 col-sm-3">
+                    <div class="controls">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="number" class="form-control" id="bet" value="0">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-2 text-center">
+                    <button type="submit" id="submitButton" class="btn btn-default">Play</button>
+                </div>
+            </div>    
+        </form>
+        <div class="container-fluid text-centered">
+            <table id="results" class="table table-bordered" style="display:none;">
+                <tbody>
+                    <tr id="rowOne">
+                        <td>Starting Bet</td>
+                        <td><span id="startingBet"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Total Rolls Before Going Broke</td>
+                        <td><span id="addResult"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Highest Amount Won</td>
+                        <td><span id="subtractResult"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Roll Count at Highest Amount Won</td>
+                        <td><span id="multiplyResult"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
